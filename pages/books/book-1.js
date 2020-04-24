@@ -26,7 +26,7 @@ class Book extends Component {
     render() {
       const { pageNumber, numPages } = this.state;
       return (
-        <div>
+        <div style={{marginLeft:"100px"}}>
          
         
             <Grid >
@@ -60,5 +60,7 @@ class Book extends Component {
 }
 
 export default function First() {
-    return <Book/>
+    return (<Book/>
+        )
+    
 } 
