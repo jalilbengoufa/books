@@ -31,7 +31,7 @@ class Book extends Component {
         
             <Grid >
             <   Grid  style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}} item xs={12}>
-                    <Document style={{justifyContent: 'center'}} file="http://localhost:3000/the_little_prince.pdf" onLoadSuccess={this.onDocumentLoadSuccess}>
+                    <Document style={{justifyContent: 'center'}} file="https://books-rose.now.sh/the_little_prince.pdf" onLoadSuccess={this.onDocumentLoadSuccess}>
                     <Page pageNumber={pageNumber} />
                     </Document>
              
