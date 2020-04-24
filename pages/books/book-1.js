@@ -6,6 +6,7 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles'
+import Link from 'next/link'
 class Book extends Component {
 
     constructor(props) {
@@ -18,7 +19,7 @@ class Book extends Component {
           this.back = this.back.bind(this);
     }
   
-    
+     
     onDocumentLoadSuccess = ({ numPages }) => {
         this.setState({ numPages });
     }
@@ -30,7 +31,7 @@ class Book extends Component {
          
         
             <Grid >
-            <   Grid  style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}} item xs={12}>
+                < Grid  style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}} item xs={12}>
                     <Document style={{justifyContent: 'center'}} file="https://books.jalil.tech/the_little_prince.pdf" onLoadSuccess={this.onDocumentLoadSuccess}>
                     <Page pageNumber={pageNumber} />
                     </Document>
@@ -45,6 +46,9 @@ class Book extends Component {
                 <Grid  style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}} item xs={12}>
                     <p>Page {pageNumber} of {numPages}</p>
                 </Grid>
+                <Grid  style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}} item xs={12}>
+                <Link href="/"><a><Button variant="contained" color="primary">My books</Button></a></Link>
+                </Grid>
             </Grid>
         </div>
       );
@@ -55,7 +59,7 @@ class Book extends Component {
     }
     back(e) {    
         e.preventDefault();   
-        this.setState(state => ({ pageNumber: this.state.pageNumber+1   })); 
+        this.setState(state => ({ pageNumber: this.state.pageNumber-1  })); 
       }
 }
 
